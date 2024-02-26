@@ -1,0 +1,153 @@
+.error404ContentContainer {
+  max-width: 571px;
+  margin: 0 auto;
+  padding-top: 10%;
+  padding-bottom: 5%;
+  .error404ContentContainerHead {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .error404ContentContainerHeadText {
+      font-style: normal;
+      font-weight: bold;
+      font-size: 14px;
+      line-height: 17px;
+      text-transform: uppercase;
+      color: #47536A;
+    }
+  }
+  .error404ContentContainerCenter{
+    display: flex;
+    padding-right: 10%;
+  }
+  .error404ContentContainerBottom {
+    display: flex;
+    justify-content: flex-end;
+    p {
+      font-size: 12px;
+      line-height: 16px;
+      color: #677897;
+      a {
+        color: #0075FF;
+      }
+    }
+  }
+  .error404BigText {
+    font-weight: bold;
+    font-size: 250px;
+    line-height: 305px;
+    text-align: center;
+    color: #677897;
+  }
+  .error404Image {
+    max-width: 144px !important;
+    max-height: 210px !important;
+    height: 144px !important;
+    width: 210px !important;
+    min-width: 144px !important;
+    min-height: 210px !important;
+  }
+}
+
+@media (max-width: 1000px) {
+  .error404ContentContainer {
+    padding-top: 15%;
+  }
+}
+
+@media (max-width: 700px) {
+  .error404ContentContainer {
+    padding-top: 18%;
+  }
+}
+
+@media (max-width: 600px) {
+  .error404ContentContainer {
+    padding-top: 20%;
+    padding-left: 30px;
+    padding-right: 30px;
+    .error404BigText {
+      font-size: 200px;
+      line-height: 255px;
+    }
+    .error404Image {
+      max-width: 124px !important;
+      max-height: 190px !important;
+      height: 124px !important;
+      width: 190px !important;
+      min-width: 124px !important;
+      min-height: 190px !important;
+    }
+    .error404ContentContainerCenter{
+      padding-right: 20%;
+    }
+  }
+}
+
+@media (max-width: 550px) {
+  .error404ContentContainer {
+    padding-bottom: 0;
+    .error404BigText {
+      font-size: 170px;
+      line-height: 225px;
+    }
+    .error404Image {
+      max-width: 104px !important;
+      max-height: 150px !important;
+      height: 104px !important;
+      width: 150px !important;
+      min-width: 104px !important;
+      min-height: 150px !important;
+    }
+    .error404ContentContainerCenter{
+      padding-right: 20%;
+    }
+  }
+
+}
+
+@media (max-width: 500px) {
+
+  .error404ContentContainerCenter{
+    padding-right: 10% !important;
+  }
+}
+
+@media (max-width: 440px) {
+  .error404ContentContainer {
+    .error404BigText {
+      font-size: 150px;
+      line-height: 195px;
+    }
+    .error404ContentContainerHead {
+      flex-direction: column;
+      align-items: flex-start;
+      button {
+        margin-top: 10px;
+      }
+    }
+    .error404Image {
+      max-width: 94px !important;
+      max-height: 140px !important;
+      height: 94px !important;
+      width: 140px !important;
+      min-width: 94px !important;
+      min-height: 140px !important;
+    }
+    .error404ContentContainerCenter{
+      padding-right: 10%!important;
+    }
+  }
+
+}
+
+@media (max-width: 400px) {
+
+  .error404ContentContainer {
+    padding-top: 30%;
+    .error404ContentContainerCenter{
+      padding-right: 0!important;
+    }
+  }
+
+}

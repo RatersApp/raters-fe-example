@@ -1,0 +1,150 @@
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+@mixin keyframes($animation-name) {
+  @-webkit-keyframes #{$animation-name} {
+    @content;
+  }
+  @-moz-keyframes #{$animation-name} {
+    @content;
+  }
+  @-ms-keyframes #{$animation-name} {
+    @content;
+  }
+  @-o-keyframes #{$animation-name} {
+    @content;
+  }
+  @keyframes #{$animation-name} {
+    @content;
+  }
+}
+
+@mixin animation($str) {
+  -webkit-animation: #{$str};
+  -moz-animation: #{$str};
+  -ms-animation: #{$str};
+  -o-animation: #{$str};
+  animation: #{$str};
+}
+
+@include keyframes(slideIn) {
+  from {
+    height: 0;
+  }
+  to {
+    height: 120px;
+  }
+}
+
+@include keyframes(grow) {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@include keyframes(elevateWithBackground) {
+  0% {
+    box-shadow: none;
+  }
+  50% {
+    box-shadow: 0 12px 16px rgba(0, 171, 240, 0.3);
+  }
+
+  100% {
+    box-shadow: none;
+  }
+}
+
+@include keyframes(fadeInAvatar) {
+  0% { opacity: 0; }
+  100% { opacity: 0.8; }
+}
+
+@include keyframes(fadeIn) {
+  0% { opacity: 0;}
+  100% { opacity: 0.8 }
+}
+
+
+
+@mixin defaultCard {
+  box-shadow: 0 4px 6px rgba(28, 67, 104, 0.1);
+  border-radius: 12px;
+  background-color: #ffffff;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+@mixin skeletonBackground {
+  background-image: linear-gradient(135deg, #e1f4f9 0%, #d8ebff 100%);
+}
+
+
+@mixin heading-secondary {
+  color: $subtitle-primary;
+  font-size: $font-size-semi;
+  font-weight: $font-weight-semibold;
+}
+
+@mixin transparent-scrollbar {
+  &::-webkit-scrollbar {
+    width: 0;
+    background: transparent;
+  }
+
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+@mixin controlButton {
+  cursor: pointer;
+  border: none;
+  padding: 0;
+  background-color: unset;
+  transition: box-shadow .3s;
+
+  &> img {
+    border-radius: 50%;
+    &:hover {
+
+      filter: brightness(0.9);
+      //transition: 0.3s ease-in-out;
+      //transform: translate(-1px, -1px);
+      //box-shadow: 0 0 7px rgba(55, 33, 33, .6);
+    }
+  }
+}
+
+@mixin exclude-app-bar-padding {
+  padding-top: 60px !important;
+}
+
+@mixin line-clamp($line) {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: $line;
+  overflow: hidden;;
+}
+
+@mixin text-ellipsis {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+@mixin main-content-heading {
+  color: $heading-primary;
+  font-weight: $font-weight-bold;
+  text-transform: uppercase;
+}

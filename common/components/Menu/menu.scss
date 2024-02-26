@@ -1,0 +1,29 @@
+.shareMenuBox {
+  & > .MuiPaper-root {
+    box-shadow: 0 4px 20px rgba(28, 67, 104, 0.2);
+    border-radius: 6px;
+    background-color: #ffffff;
+  }
+}
+
+.shareMenuItem {
+  min-height: 48px !important;
+  &:hover {
+    background-color: #f7f7f7;
+  }
+
+  & > button > a {
+    display: flex;
+  }
+}
+
+.shareText {
+  margin-left: 16px;
+  color: $heading-primary;
+  font-size: $font-size-default;
+  font-weight: $font-weight-medium;
+
+  &:first-child {
+    margin-left: 26px;
+  }
+}

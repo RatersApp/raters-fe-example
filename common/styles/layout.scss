@@ -1,0 +1,99 @@
+.show-on-xs, .show-on-sm, .show-on-md, .show-on-lg, .show-on-xl {
+  display: none !important;
+}
+
+@include on-xs {
+  .show-on-xs {
+    display: block;
+  }
+}
+
+@include on-sm {
+  .show-on-sm {
+    display: block;
+  }
+}
+
+@include on-lg {
+  .show-on-lg {
+    display: block;
+  }
+}
+
+@include on-xl {
+  .show-on-xl {
+    display: block;
+  }
+}
+
+.hide-on-xs, .hide-on-sm, .hide-on-md, .hide-on-lg, .hide-on-xl {
+  display: block !important;
+}
+
+@include on-xs {
+  .hide-on-xs {
+    display: none !important;
+  }
+}
+
+@include on-sm {
+  .hide-on-sm {
+    display: none !important;
+  }
+}
+
+@include on-lg {
+  .hide-on-lg {
+    display: none !important;
+  }
+}
+
+@include on-xl {
+  .hide-on-xl {
+    display: none !important;
+  }
+}
+
+.show-on-sm-down, .show-on-md-down, .show-on-lg-down {
+  display: none;
+}
+
+@include on-sm-down {
+  .show-on-sm-down {
+    display: block;
+  }
+}
+
+@include on-md-down {
+  .show-on-md-down {
+    display: block;
+  }
+}
+
+@include on-lg-down {
+  .show-on-lg-down {
+    display: block;
+  }
+}
+
+.hide-on-sm-down, .hide-on-md-down, .hide-on-lg-down {
+  display: block;
+}
+
+@include on-sm-down {
+  .hide-on-sm-down {
+    display: none !important;
+  }
+}
+
+@include on-md-down {
+  .hide-on-md-down {
+    display: none !important;
+  }
+}
+
+@include on-lg-down {
+  .hide-on-lg-down {
+    display: none !important;
+  }
+}

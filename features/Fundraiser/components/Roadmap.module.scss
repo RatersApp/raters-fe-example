@@ -1,0 +1,228 @@
+@keyframes roadmapAnimation {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.roadmapContainer {
+  position: relative;
+  display: flex;
+  align-self: center;
+  gap: 30px;
+  margin-top: 63px;
+  padding-top: 5px;
+
+  & > svg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100vw;
+
+    stroke-dashoffset: 5500;
+    stroke-dasharray: 5500;
+    pointer-events: none;
+  }
+
+  & > div {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    max-width: 558px;
+    gap: 30px;
+
+    & > div {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: center;
+      width: 166px;
+      height: 176px;
+
+      padding: 0 24px 30px 24px;
+      gap: 10px;
+
+      & > svg {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+      }
+
+      & > p:first-of-type {
+        position: relative;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 16px;
+        text-align: center;
+
+        color: #003879;
+
+        height: 64px;
+      }
+
+      & > p:last-of-type {
+        position: relative;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 17px;
+        text-align: center;
+
+        color: #FFFFFF;
+
+        background-color: #0075FF;
+        border-radius: 20px;
+
+        padding: 5px 16px;
+      }
+    }
+  }
+
+  & > div:first-of-type {
+    & > div:nth-of-type(even) {
+      @extend .roadMapCardBlue;
+    }
+  }
+
+  & > div:last-of-type {
+    & > div:nth-of-type(odd) {
+      @extend .roadMapCardBlue;
+    }
+  }
+
+  @media (min-width: 1351px) {
+    & > svg:last-of-type, & > svg:nth-of-type(2) {
+      display: none;
+    }
+    & > div > div:nth-of-type(n + 4) {
+      flex-direction: column-reverse;
+      padding-top: 30px;
+
+      & > svg {
+        transform: rotate(180deg);
+      }
+
+      margin-top: -20px;
+    }
+  }
+
+  @media (min-width: 1000px) and (max-width: 1350px) {
+    flex-direction: column;
+    gap: 60px;
+
+    & > svg:last-of-type, & > svg:first-of-type {
+      display: none;
+    }
+
+    & > div {
+      max-width: 799px;
+      gap: 60px;
+
+      & > div {
+        width: 226px;
+        height: 240px;
+      }
+    }
+
+    & > div:first-of-type {
+      & > div:nth-of-type(n + 4) {
+        flex-direction: column-reverse;
+        padding-top: 30px;
+
+        & > svg {
+          transform: rotate(180deg);
+        }
+
+        margin-top: -45px;
+      }
+    }
+
+    & > div:last-of-type {
+      flex-wrap: wrap-reverse;
+      flex-direction: row-reverse;
+
+      & > div:nth-last-of-type(n + 4) {
+        flex-direction: column-reverse;
+        padding-top: 30px;
+
+        & > svg {
+          transform: rotate(180deg);
+        }
+
+        margin-top: -45px;
+      }
+    }
+  }
+
+  @media (max-width: 999px) {
+    & > svg:first-of-type, & > svg:nth-of-type(2) {
+      display: none;
+    }
+    flex-direction: column;
+
+    & > div {
+      min-width: 362px;
+      flex-wrap: wrap-reverse;
+      flex-direction: column;
+      max-height: 600px;
+
+      & > div {
+        height: 166px;
+        flex-direction: column-reverse;
+        padding-top: 30px;
+        padding-left: 43px;
+        margin-right: -10px;
+
+        & > svg {
+          transform: rotate(-90deg);
+        }
+
+        & > p:last-of-type {
+          padding: 5px 14px;
+        }
+      }
+
+
+      & > div:nth-last-of-type(n + 4) {
+        padding-left: 24px;
+        padding-right: 43px;
+        margin-right: 0;
+        margin-left: -10px;
+
+        & > svg {
+          transform: rotate(90deg);
+        }
+      }
+    }
+  }
+}
+
+.roadmapAnimation {
+  & > svg {
+    animation: roadmapAnimation 5s linear forwards;
+  }
+}
+
+.roadMapCardBlue {
+  & > svg {
+    & > path {
+      fill: #0075FF;
+    }
+  }
+
+  & > p:first-of-type {
+    color: #ffffff;
+  }
+
+  & > p:last-of-type {
+    background-color: #ffffff;
+    color: #0075FF
+  }
+}

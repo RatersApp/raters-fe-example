@@ -1,0 +1,99 @@
+@import "./common.module";
+
+.getTokenCards {
+  @extend .swiper;
+  margin-top: 46px;
+
+  :global(.swiper-slide) {
+    @extend .blurContainer;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    height: 265px;
+
+    & > div {
+      display: flex;
+      position: relative;
+      justify-content: center;
+      align-items: center;
+      width: 60px;
+      height: 60px;
+
+      margin-top: 10px;
+
+      & > div {
+        position: absolute;
+        background: #EAF1FC;
+        border-radius: 20px;
+        transform: rotate(45deg);
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+      }
+
+      & > svg {
+        position: relative;
+      }
+    }
+
+    & > p:first-of-type {
+      font-style: normal;
+      font-weight: 700;
+      font-size: 20px;
+      line-height: 24px;
+      text-align: center;
+
+      color: #003879;
+
+      margin-top: 20px;
+      margin-bottom: 10px;
+    }
+
+    & > p:last-of-type {
+      font-style: normal;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 19px;
+      text-align: center;
+
+      color: #003879;
+    }
+
+    @media (max-width: 610px) {
+      justify-content: center;
+      padding: 10px;
+      width: unset;
+      height: 81vw;
+
+      & > div {
+        width: 75px;
+        height: 75px;
+      }
+
+      & > p:first-of-type {
+        font-size: 24px;
+        line-height: 29px;
+      }
+
+      & > p:last-of-type {
+        font-size: 16px;
+        line-height: 29px;
+      }
+    }
+  }
+
+  :global(.swiper-slide):hover {
+    @extend .blurAnimation;
+  }
+
+  @media (max-width: 609px) {
+    margin-top: 20px;
+  }
+
+  @media (min-width: 610px) and (max-width: 1350px) {
+    width: 560px;
+  }
+}

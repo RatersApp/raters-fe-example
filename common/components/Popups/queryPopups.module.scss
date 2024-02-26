@@ -1,0 +1,112 @@
+.popupWrapper {
+  position: relative;
+  background-color: #fff;
+  padding: 32px;
+  border-radius: 12px;
+  margin: 32px;
+  flex: 1;
+  max-width: 550px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+  @media (max-width: 425px) {
+    margin: unset;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+}
+
+.title {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  text-transform: uppercase;
+  color: #47536A;
+
+  margin-bottom: 16px;
+}
+
+.description {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  color: #47536A;
+}
+
+.close {
+  position: absolute;
+  padding: 0;
+  top: 0;
+  right: 0;
+  margin: 10px;
+}
+
+.button {
+  display: block;
+  margin-left: auto;
+  margin-right: 0;
+  margin-top: 24px;
+
+  min-width: 106px;
+}
+
+.authPopup {
+  max-width: 440px;
+
+  .title {
+    text-align: center;
+  }
+
+  .description {
+    text-align: center;
+  }
+
+  & > svg {
+    display: block;
+    margin: 24px auto 0;
+  }
+
+  .button {
+    margin-right: auto;
+
+    min-width: 140px;
+  }
+}
+
+.reset {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-top: 4px;
+
+  & > div:first-of-type {
+    width: 110px;
+  }
+  & > div:last-of-type {
+    display: flex;
+    gap: 16px;
+  }
+}
+
+@media (max-width: 520px) {
+  .reset {
+    display: block;
+    margin-top: 28px;
+
+    & > div:first-of-type {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      align-items: stretch;
+    }
+    & > div:last-of-type {
+      display: flex;
+      gap: 24px;
+      margin-top: 40px;
+
+      & > button {
+        display: flex;
+        flex: 1;
+      }
+    }
+  }
+}

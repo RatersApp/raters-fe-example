@@ -1,0 +1,111 @@
+.correlationPopupBody {
+  display: flex;
+  flex-direction: column;
+  padding: 0 50px 50px 50px;
+
+  & > p {
+    @include main-content-heading;
+    margin-bottom: 16px;
+    text-align: center;
+  }
+}
+
+.correlationSubtitle {
+  font-size: 14px;
+  text-transform: none !important;
+  font-weight: normal !important;
+  width: 350px;
+  text-align: left !important;
+}
+
+@media (max-width: 500px) {
+  .correlationSubtitle {
+    width: 250px;
+
+  }
+}
+
+.correlationCard {
+  @include defaultCard;
+  padding: 8px 0 0;
+  box-shadow: none;
+
+  & .ratePopupControlSection {
+    padding-right: 8px;
+  }
+}
+
+.correlationPopupSection {
+  padding: 16px;
+  display: flex;
+  align-items: center;
+
+  & > p {
+    margin-left: 10%;
+  }
+
+  & .styledTabRow {
+    margin-bottom: 3px;
+  }
+  padding-left: 0;
+}
+
+.mainButton {
+  padding: 6px 32px;
+  height: 40px;
+  border-radius: 20px;
+  align-items: center;
+  justify-content: center;
+  box-shadow: unset;
+
+  p {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 15px;
+    text-align: center;
+    text-transform: none;
+
+    color: #FFFFFF;
+  }
+}
+
+.resetButton {
+  padding: 6px 12px;
+  height: 32px;
+  border-radius: 20px;
+  align-items: center;
+  justify-content: center;
+  background: #D2E4FF;
+  border: none;
+  &:hover {
+    border: none !important;
+  }
+  p {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 12px;
+    text-align: center;
+    text-transform: none;
+
+    color: #47536A;
+  }
+}
+
+.mainButton.Mui-disabled {
+  opacity: 0.5;
+}
+
+.mainOutlinedButton {
+  border: 1px solid #0075FF;
+  background-color: #fff;
+
+  p {
+    color: #0075FF;
+  }
+}
+
+.mainOutlinedButton.Mui-disabled {
+  @extend .mainOutlinedButton;
+}

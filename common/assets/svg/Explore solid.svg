@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="22px" height="21px" viewBox="0 0 22 21" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.5 (67469) - http://www.bohemiancoding.com/sketch -->
+    <title>Explore solid</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="100%" y1="16.6128715%" x2="11.6834243%" y2="104.002933%" id="linearGradient-1">
+            <stop stop-color="#17F2FF" offset="0%"></stop>
+            <stop stop-color="#2D6FD3" offset="52.985196%"></stop>
+            <stop stop-color="#9844B2" offset="100%"></stop>
+        </linearGradient>
+        <path d="M5.13957356,11.1556832 L1.24473127,11.5745255 C0.698993618,11.6332129 0.593843848,11.9900246 0.996132622,12.3588883 L3.91110647,15.0316649 L3.08729148,18.9745856 C2.97527018,19.5107389 3.27750118,19.713423 3.74633058,19.4367432 L7.14345605,17.4319288 L10.5405815,19.4367432 C11.0165801,19.7176539 11.311345,19.5093178 11.1996206,18.9745856 L10.3758056,15.0316649 L13.2907795,12.3588883 C13.6992199,11.9843841 13.579699,11.632329 13.0421808,11.5745255 L9.14733853,11.1556832 L7.55866179,7.71691491 C7.32934999,7.22055833 6.95852744,7.21846881 6.7282503,7.71691491 L5.13957356,11.1556832 Z" id="path-2"></path>
+        <ellipse id="path-3" cx="2.76028554" cy="4.5345135" rx="2.76028554" ry="2.76013865"></ellipse>
+        <ellipse id="path-4" cx="12.1452564" cy="3.64732607" rx="3.64752017" ry="3.64732607"></ellipse>
+        <path d="M16.7202775,11.6032952 C17.5512896,10.8705342 18.8562361,10.9097675 19.6399553,11.695939 L21.7943637,13.857089 C22.5758451,14.6410158 22.3192632,15.276514 21.2052707,15.276514 L14.5586308,15.276514 C13.4518024,15.276514 13.2272793,14.6833137 14.0592212,13.9497329 L16.7202775,11.6032952 Z" id="path-5"></path>
+    </defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Menu-Explore-Mobile" transform="translate(-156.000000, -20.000000)">
+            <g id="Explore-solid" transform="translate(157.000000, 21.000000)">
+                <g id="Shape-Copy-2">
+                    <use fill="url(#linearGradient-1)" xlink:href="#path-2"></use>
+                    <use fill="#47536A" xlink:href="#path-2"></use>
+                </g>
+                <g id="Oval-5">
+                    <use fill="url(#linearGradient-1)" xlink:href="#path-3"></use>
+                    <use stroke="#47536A" stroke-width="1" fill="#47536A" xlink:href="#path-3"></use>
+                </g>
+                <g id="Oval-5-Copy">
+                    <use fill="url(#linearGradient-1)" xlink:href="#path-4"></use>
+                    <use stroke="#47536A" stroke-width="1" fill="#47536A" xlink:href="#path-4"></use>
+                </g>
+                <g id="Polygon" transform="translate(17.901215, 13.177729) rotate(-90.000000) translate(-17.901215, -13.177729) ">
+                    <use fill="url(#linearGradient-1)" xlink:href="#path-5"></use>
+                    <use stroke="#47536A" stroke-width="1" fill="#47536A" xlink:href="#path-5"></use>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,117 @@
+.disableHover:hover {
+  background: none;
+}
+
+button {
+  font-family: inherit;
+}
+
+input[type="text"] {
+  font-size: inherit;
+}
+
+.modal {
+  @include flex-center;
+  @include animation('fadeIn 0.8s')
+}
+
+.excludeAppBar {
+  padding-top: 60px !important;
+}
+
+.disabledCSSLink {
+  text-decoration: none !important;
+
+  &:hover {
+    text-decoration: none !important;
+  }
+}
+
+.defaultMarginBottom {
+  margin-bottom: 16px;
+}
+
+.ratingWrapper {
+  &:focus {
+    outline: none;
+  }
+}
+
+.shareWithFriendsContainer {
+  margin: 12px 3px 24px 3px;
+  justify-content: flex-start;
+  align-items: center;
+  box-shadow: 0 4px 6px rgba(28, 67, 104, 0.1);
+  border-radius: 12px;
+  background-color: #ffffff;
+
+}
+
+.chipContent {
+  color: $heading-primary;
+  font-size: 10px;
+}
+
+
+.headingPrimary {
+  color: $heading-primary;
+  font-size: $font-size-semi;
+  font-weight: $font-weight-bold;
+}
+
+.shareWithFriendsTitle {
+  height: 15px;
+  margin-left: 5px;
+  color: $heading-primary;
+  font-size: $font-size-default;
+  font-weight: $font-weight-medium;
+}
+
+.MuiTab-root {
+  max-width: none;
+}
+
+.to-end {
+  display: flex !important;
+  align-items: flex-end;
+}
+
+.content-space-between {
+
+}
+
+.user-side {
+  margin-bottom: 24px;
+}
+
+.flex-space-between {
+  display: flex;
+  align-content: space-between;
+  flex-direction: column;
+  height: 100%;
+}
+
+.MuiScopedCssBaseline-root {
+  background: #F4FAFF;
+}
+
+.footermarketplace {
+  width: calc(100% - 10px);
+  margin-top: 24px;
+  position: relative;
+}
+
+p, a {
+  text-decoration: none !important;
+}
+
+.op1 {
+  opacity: 1 !important;
+}
+
+.centered {
+  display: flex;
+  align-items: center;
+}
+
+

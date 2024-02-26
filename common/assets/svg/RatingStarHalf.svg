@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="7px" height="12px" viewBox="0 0 7 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.5 (67469) - http://www.bohemiancoding.com/sketch -->
+    <title>star_half</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Web" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Feed-Rated" transform="translate(-968.000000, -577.000000)" fill="#000000">
+            <g id="Feed" transform="translate(442.000000, 78.000000)">
+                <g id="feed3" transform="translate(16.000000, 22.000000)">
+                    <g id="User-review" transform="translate(0.000000, 434.000000)">
+                        <g id="Stars" transform="translate(450.000000, 43.000000)">
+                            <path d="M65.9299095,0.161052874 L64.3734868,4.09975521 L60.2256203,4.3935697 C60.1264682,4.40313549 60.0424344,4.47205728 60.0119577,4.56880892 C59.9814809,4.66556057 60.0104218,4.77153673 60.0855423,4.8382619 L63.2762088,7.56200162 L62.2645341,11.6833454 C62.2395027,11.7839818 62.2769826,11.8900355 62.3591979,11.9512076 C62.4414132,12.0123798 62.5518282,12.0163669 62.6380755,11.961278 L66.1633729,9.70605329 L66.1322445,0.00223423108 C66.0413174,0.0131976853 65.9636175,0.0741865566 65.9299095,0.161052874 Z" id="star_half"></path>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

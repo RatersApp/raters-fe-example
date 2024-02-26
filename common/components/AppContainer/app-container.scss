@@ -1,0 +1,52 @@
+.app-container {
+  display: grid;
+  grid-template-columns: 0.25fr 0.53fr 0.25fr;
+  grid-gap: 4px;
+  width: 100%;
+
+  .left-side, .right-side {
+    @include transparent-scrollbar;
+    padding-top: 60px;
+    height: 100vh;
+    overflow-x: hidden;
+  }
+
+  .main {
+    @include transparent-scrollbar;
+    height: 100vh;
+    overflow-x: hidden;
+  }
+}
+
+.main-infinite {
+  @include transparent-scrollbar;
+
+}
+
+
+
+@media (max-width: 600px) {
+  .app-container {
+    .left-side, .main, .right-side {
+      height: 100%;
+      overflow: initial;
+      padding: 0;
+    }
+  }
+
+}
+
+
+
+@media (max-width: 1200px) {
+  .app-container {
+    grid-template-columns: 0.25fr 0.75fr;
+  }
+
+}
+
+@media (max-width: 992px) {
+  .app-container {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,52 @@
+$xs: 576px;
+$sm: 992px;
+$md: 1200px;
+$lg: 1200px;
+
+@mixin on-xs {
+  @media (min-width: 1px) and (max-width: #{$xs - 1px}) {
+    @content;
+  }
+}
+
+@mixin on-sm {
+  @media (min-width: $xs) and (max-width: #{$sm - 1px}) {
+    @content;
+  }
+}
+
+@mixin on-md {
+  @media (min-width: $sm) and (max-width: #{$md - 1px}) {
+    @content;
+  }
+}
+
+@mixin on-lg {
+  @media (min-width: $md) and (max-width: #{$lg - 1px}) {
+    @content;
+  }
+}
+
+@mixin on-xl {
+  @media (min-width: $lg) {
+    @content;
+  }
+}
+
+@mixin on-sm-down {
+  @media (max-width: #{$sm - 1px}) {
+    @content;
+  }
+}
+
+@mixin on-md-down {
+  @media (max-width: #{$md - 1px}) {
+    @content;
+  }
+}
+
+@mixin on-lg-down {
+  @media (max-width: #{$lg - 1px}) {
+    @content;
+  }
+}

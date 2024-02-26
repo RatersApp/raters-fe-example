@@ -1,0 +1,560 @@
+.authModalWrapper {
+  max-width: 520px;
+  padding: 12px 0 15px;
+  height: 100%;
+  width: 100%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  background-color: $clear-white;
+  box-sizing: border-box;
+  display: grid;
+  align-items: center;
+  min-height: 500px;
+  justify-items: center;
+  position: relative;
+}
+
+.authWrapper {
+  display: flex;
+  min-height: 100vh;
+}
+
+.authContent {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  background-color: #fff;
+  z-index: 1;
+}
+
+.authHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 16px;
+  margin-left: 5%;
+  margin-right: 3%;
+}
+
+.authLogo {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.authBackContainer {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.authBody {
+  align-self: center;
+  width: 100%;
+  max-width: 380px;
+  align-items: stretch;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex: 1;
+  margin-top: 7%;
+  margin-bottom: 7%;
+  padding: 0 20px;
+}
+
+.continueAsGuestButton {
+  color: #47536A;
+  font-size: 13px;
+  line-height: 18px;
+  font-weight: 400;
+  margin-bottom: 15px;
+  text-align: center;
+
+  &::first-line {
+    text-align: center;
+  }
+
+  & > a {
+    cursor: pointer;
+  }
+}
+
+.facebookDescription {
+  white-space: pre-line;
+  color: #47536A;
+  font-size: 13px;
+  line-height: 18px;
+  font-weight: 400;
+  margin: 24px 12px 8px;
+}
+
+.welcomeMessageDescription {
+  color: #677897;
+  font-size: 13px;
+  line-height: 18px;
+  margin-top: 16px;
+  margin-bottom: 32px;
+  align-self: center;
+}
+
+@keyframes animateShadow {
+  from {
+    box-shadow: none;
+    border-radius: 3px;
+  }
+  to {
+    border-radius: 8px;
+    box-shadow: 0 8px 30px 0 rgba(89, 94, 198, 0.3);
+  }
+}
+
+.ratersLogoWrapper {
+  @include flex-center;
+
+  height: 40px;
+  width: 40px;
+  animation: 1.5s ease-in-out 0s 1 animateShadow;
+  animation-fill-mode: forwards;
+  margin-right: 13px;
+
+  & > svg {
+    max-width: 80%;
+  }
+}
+
+.backTitle {
+  margin-left: 8px;
+
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 15px;
+
+  color: #47536A;
+}
+
+.loginBackground {
+  align-self: center;
+  flex: 0.9;
+  height: 89vh;
+  margin-left: -6%;
+  margin-top: 6%;
+  @media only screen and (max-width: 768px) {
+    display: none;
+  }
+}
+
+.authButtonSpace {
+  margin-top: 24px;
+}
+
+.viaEmailButton {
+  @extend .loginButton;
+  background-color: #677897;
+
+  &:hover {
+    background-color: #475877;
+  }
+}
+
+.authOutlinedButton {
+  margin-top: 20px;
+}
+
+.authOr {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  text-align: center;
+  color: #677897;
+  margin-bottom: 2px;
+}
+
+.authSeparator {
+  display: flex;
+  align-items: center;
+  align-self: stretch;
+  margin-top: 24px;
+
+  & > div {
+    display: flex;
+    flex: 1;
+    height: 1px;
+    background-color: #EAF1FC;
+    margin: 0 16px;
+  }
+}
+
+.loginButton {
+  p {
+    height: 22px;
+    line-height: 22px;
+    text-align: left;
+    width: 80px;
+    margin-right: 4px;
+  }
+}
+
+.facebookButton {
+  p {
+    color: #47536A;
+  }
+}
+
+#googleAuthText {
+  text-align: left;
+  margin-right: 4px;
+}
+
+.authButtonLogo {
+  width: 25px;
+  text-align: start;
+  display: flex;
+  align-items: center;
+}
+
+.authOutlinedButtonLogo {
+  @extend .authButtonLogo;
+  & > svg path {
+    fill: #0075FF;
+  }
+}
+
+.authPortalWrapper {
+  @include flex-center;
+
+  & > div {
+    @include flex-center;
+    width: 100%;
+    padding: 0 16px;
+  }
+}
+
+.fullPortalWrapper {
+  @include flex-center;
+  .fullPortalTitle {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 27px;
+    text-align: center;
+    color: #47536A;
+  }
+  .fullPortalImage {
+    margin-top: 60px;
+  }
+
+  & > div {
+    @include flex-center;
+    width: 100%;
+    padding: 0;
+    height: 100%;
+  }
+
+  .carousel {
+    height: 500px;
+    &-item {
+      text-align: center;
+    }
+    &-indicators {
+      justify-content: space-between;
+      padding: 0;
+      width: 80px;
+      margin: auto;
+      li.active {
+        width: 24px;
+        background: #0075FF;
+      }
+      li {
+        width: 12px;
+        height: 6px;
+        background: #D2E4FF;
+        border-radius: 5px;
+      }
+    }
+  }
+}
+
+.authWelcomeMessage {
+  height: 20px;
+  color: $heading-primary;
+  font-size: 16px;
+  font-weight: 700;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.changeEmail {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 14px;
+  padding: 4px 12px 0;
+  align-self: flex-start;
+
+  color: #0075FF;
+
+  cursor: pointer;
+}
+
+.authDescription {
+  font-family: $open-sans-default;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 19px;
+  padding: 0 12px;
+  align-self: flex-start;
+  margin-top: 12px;
+
+  color: #47536A;
+}
+
+.inputLabel {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 14px;
+  color: #47536A;
+
+  margin: 12px 0 6px 12px;
+}
+
+.authTitle {
+  @extend .inputLabel;
+  font-size: 14px;
+  line-height: 17px;
+  text-transform: uppercase;
+  color: #47536A;
+  align-self: flex-start;
+
+  margin-bottom: 4px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-self: stretch;
+}
+
+.resendOtp {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 16px;
+
+  color: #0075FF;
+
+  cursor: pointer;
+}
+
+.resendOtpDisabled {
+  color: #bbbbbb;
+}
+
+.handleCloseRatePopup {
+  @include controlButton;
+}
+
+.closeButtonIcon {
+  @include controlButton;
+  position: relative;
+  bottom: 12px;
+  right: 8px;
+}
+
+.authNavButtonContainer {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  position: absolute;
+  top: 20px;
+}
+
+.inputApp {
+  height: 40px;
+  border-radius: 20px;
+  background-color: #EAF1FC;
+  padding: 11px 11px 11px 20px;
+  border: 1px solid transparent;
+
+  &.Mui-focused {
+    border: 1px solid #677897;
+    background-color: #FFFFFF;
+  }
+
+  & > input {
+    font-size: 13px;
+    line-height: 18px;
+    color: #47536A !important;
+  }
+
+  & > input::placeholder {
+    opacity: 1;
+    color: #67789790;
+  }
+
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:active{
+    -webkit-box-shadow: 0 0 0 30px #47536A00 inset !important;
+    -webkit-text-fill-color: #47536A !important;
+  }
+  input:-webkit-autofill:focus {
+    -webkit-box-shadow: 0 0 0 30px #FFFFFF inset !important;
+    -webkit-text-fill-color: #47536A !important;
+  }
+}
+
+.inputAppError {
+  background-color: rgb(251, 214, 214);
+
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  input:-webkit-autofill:active{
+    -webkit-box-shadow: 0 0 0 30px rgb(251, 214, 214) inset !important;
+    -webkit-text-fill-color: #47536A!important;
+  }
+}
+
+.errorText {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 11px;
+  line-height: 15px;
+
+  color: #FE3824;
+}
+
+.successText {
+  @extend .errorText;
+
+  color: #34A853;
+}
+
+.inputErrorMessage {
+  @extend .errorText;
+
+  padding: 12px 12px 0;
+}
+
+.forgotPassword {
+  align-self: flex-end;
+  color: #0075FF;
+  font-size: 11px;
+  line-height: 15px;
+  font-weight: 400;
+  cursor: pointer;
+
+  padding: 6px 12px 0;
+}
+
+.resetPasswordDescription {
+  white-space: pre-line;
+  width: 180px;
+  color: #47536a;
+  font-size: 14px;
+  font-weight: 400;
+  margin-bottom: 16px;
+}
+
+input {
+  color: #677897 !important;
+}
+
+.makeStyles-authButton-1 {
+  margin-top: 0 !important;
+}
+
+.nowrap-btn p {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.proPopUpWrapper {
+  position: relative;
+  max-height: 473px;
+  outline: none;
+  max-width: 520px;
+  height: 100%;
+  width: 100%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  background-color: $clear-white;
+  box-sizing: border-box;
+  min-height: 500px;
+  justify-items: center;
+  padding: 30px;
+  .proPopupDescription {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 19px;
+    margin-top: 10px;
+
+    color: #47536A;
+  }
+
+  .proPopupTitle {
+    font-weight: bold;
+    font-size: 13px;
+    line-height: 16px;
+    margin-top: 12px;
+
+    text-transform: uppercase;
+
+    color: #47536A
+  }
+  .phoneProPopupContainer {
+    img {
+      width: 120px;
+      height: 217px;
+    }
+  }
+
+  .proPopupContent {
+    display: flex;
+    justify-content: space-around;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-top: 50px;
+  }
+
+}
+
+.phoneProPopupList {
+  padding: 10px 24px 24px 36px;
+  font-size: 13px;
+  color: #47536A;
+  font-weight: 400;
+  li {
+    line-height: 18px;
+  }
+}
+
+.getAppPopupButton {
+  background: #0075FF;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1) !important;
+  color: white !important;
+  text-transform: none;
+  width: 90%;
+  margin-left: 24px;
+  margin-right: 24px;
+  height: 40px;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 15px;
+}
+
+.getAppAuth {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+
+}

@@ -1,0 +1,518 @@
+@import "./components/common.module";
+
+.landingParallax {
+  height: 100vh;
+
+  overflow-x: hidden;
+  overflow-y: auto;
+
+  perspective: 1px;
+  background-color: white;
+
+  @media (max-width: 767px) {
+    margin-top: -60px;
+  }
+
+  @media (min-width: 768px) and (max-width: 992px) {
+    margin-top: -40px;
+  }
+}
+
+.landingBackground {
+  position: absolute;
+  top: 0;
+  left: calc(50% + 40px);
+  height: 10px;
+  overflow: visible;
+  transform: translateX(-50%) translateZ(-0.25px) scale(1.25) translateY(calc(-10vh - 940px));
+  @media (max-width: 425px) {
+    display: none;
+  }
+}
+
+.landingBackgroundMobile {
+  position: absolute;
+  top: 0;
+  left: calc(50% + 120px);
+  height: 10px;
+  overflow: visible;
+  transform: translateX(-50%) translateZ(-0.25px) scale(1.33) translateY(calc(-10vh - 165px));
+  @media (min-width: 426px) {
+    display: none;
+  }
+}
+
+.landingContent {
+  cursor: default;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  padding-left: 100px;
+  padding-right: 100px;
+
+  max-width: 1350px;
+  margin: 92px auto 120px auto;
+
+  @media (max-width: 768px) {
+    padding-left: 25px;
+    padding-right: 25px;
+    margin-top: 0;
+
+    .mainTitle {
+      font-size: 16px;
+    }
+
+    .mainDescription {
+      font-size: 36px;
+    }
+  }
+}
+
+.getTokenAppText {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  text-align: center;
+
+  color: #003879;
+
+  margin-top: 120px;
+
+  @media (max-width: 532px) {
+    margin-top: 100px;
+  }
+}
+
+.getTokenTitle {
+  @extend .landingTitle;
+
+  margin-top: 16px;
+}
+
+.tokenUtilityTitle {
+  @extend .landingTitle;
+
+  margin-top: 164px;
+
+  @media (max-width: 768px) {
+    margin-top: 100px;
+  }
+}
+
+.info {
+  @extend .blurContainer;
+  position: relative;
+  padding: 0;
+  max-width: 947px;
+  align-self: center;
+  display: flex;
+  margin-top: 160px;
+
+  & > p {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 44px;
+
+    color: #003879;
+
+    margin: 68px 0 68px 68px;
+  }
+
+  & > img {
+    margin: -42px -26px -9px 4px;
+  }
+
+  @media (max-width: 900px) {
+    margin-top: 120px;
+    padding: 40px 30px;
+    flex-direction: column-reverse;
+    gap: 30px;
+    align-items: center;
+
+    & > p {
+      margin: 0;
+      font-size: 20px;
+      line-height: 24px;
+      text-align: center;
+    }
+
+    & > img {
+      width: 190px;
+      height: 190px;
+      margin: 0;
+    }
+  }
+}
+
+.whyUsTitle {
+  @extend .landingTitle;
+
+  margin-top: 120px;
+
+  @media (max-width: 768px) {
+    margin-top: 100px;
+  }
+}
+
+.kpiTitle {
+  @extend .landingTitle;
+
+  margin-top: 150px;
+
+  @media (max-width: 768px) {
+    margin-top: 120px;
+  }
+}
+
+.tokenSaleRoundsTitle {
+  @extend .landingTitle;
+
+  margin-top: 140px;
+
+  @media (max-width: 768px) {
+    margin-top: 120px;
+  }
+}
+
+.tokenSaleRoundsContainer {
+  @extend .blurContainer;
+  @extend .blurContainerFull;
+
+  margin-top: 62px;
+
+  & > div:first-of-type {
+    display: flex;
+    justify-content: space-between;
+
+    & > p {
+      font-style: normal;
+      font-weight: 700;
+      font-size: 20px;
+      line-height: 24px;
+      text-align: center;
+
+      color: #003879;
+
+      opacity: 0.9;
+    }
+  }
+
+  & > svg:first-of-type {
+    width: 100%;
+    @media (max-width: 1050px) {
+      display: none;
+    }
+  }
+
+  & > svg:last-of-type {
+    display: none;
+    @media (max-width: 1050px) {
+      width: 100%;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 40px;
+      display: block;
+    }
+  }
+
+  @media (max-width: 768px) {
+    margin-top: 15px;
+  }
+}
+
+.tokenSaleRoundsLegend {
+  display: flex;
+  gap: 30px;
+
+  @media (max-width: 1050px) {
+    display: none;
+  }
+}
+
+.tokenSaleRoundsLegendMobile {
+  display: none;
+  @media (max-width: 1050px) {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 40px;
+    min-height: 42px;
+    & > .tokenSaleRoundsPrice > div {
+      width: 45px;
+      height: 8px;
+    }
+  }
+}
+
+.tokenSaleRoundsPrice {
+  display: flex;
+  align-items: center;
+
+  & > div {
+    width: 8px;
+    height: 32px;
+    background-color: #595EC6;
+    border-radius: 10px;
+  }
+
+  & > p {
+    margin-left: 17px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 14px;
+
+    color: #595EC6;
+  }
+}
+
+.graphLegendBlue {
+  display: flex;
+  align-items: center;
+
+  & > div {
+    width: 46px;
+    height: 8px;
+    border-radius: 10px;
+    background-color: #0075FF;
+
+    & > div {
+      margin-left: 14px;
+      margin-top: -5px;
+
+      width: 18px;
+      height: 18px;
+      background: #FFFFFF;
+
+      border: 3px solid;
+      border-color: #0075FF;
+      border-radius: 10px;
+    }
+  }
+
+  & > p {
+    margin-left: 17px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 14px;
+
+    color: #0075FF;
+  }
+}
+
+.roadmapTitle {
+  @extend .landingTitle;
+
+  margin-top: 140px;
+
+  @media (max-width: 768px) {
+    margin-top: 120px;
+  }
+}
+
+.tokemonicsTitle {
+  @extend .landingTitle;
+
+  margin-top: 140px;
+
+  @media (max-width: 768px) {
+    margin-top: 100px;
+  }
+}
+
+.tokenomicsContainer {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+
+  margin-top: 62px;
+
+  & > div {
+    @extend .blurContainer;
+    padding-bottom: 20px;
+
+    & > p:first-of-type {
+      font-style: normal;
+      font-weight: 600;
+      font-size: 20px;
+      line-height: 24px;
+
+      color: #003879;
+
+      opacity: 0.9;
+
+      @media (max-width: 768px) {
+        text-align: center;
+      }
+    }
+
+    & > p:last-of-type {font-style: normal;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 20px;
+
+      color: #0075FF;
+
+      opacity: 0.9;
+
+      @media (max-width: 768px) {
+        text-align: center;
+      }
+    }
+  }
+
+  & > div:first-of-type {
+    position: relative;
+
+    & > p {
+      max-width: 282px;
+    }
+
+    & > div {
+      position: relative;
+
+      & > svg {
+        margin-top: 21px;
+        width: 100%;
+
+        & > path:nth-of-type(n + 10) {
+          opacity: 0;
+        }
+      }
+
+      & > svg:last-of-type {
+        overflow: visible;
+        position: absolute;
+        left: 12%;
+        top: 4%;
+        width: 75%;
+        height: 50%;
+
+        & > circle {
+          fill: rgba(0, 0, 0, 0);
+          stroke-width: 32;
+          stroke-dasharray: 0 1000%;
+          stroke-dashoffset: 0;
+          transform: rotate(-90deg);
+          transform-origin: center center;
+        }
+      }
+    }
+  }
+
+  & > div:last-of-type {
+    width: 65%;
+
+    & > svg {
+      margin-top: 51px;
+      width: 100%;
+    }
+
+    & > svg:last-of-type {
+      display: none;
+    }
+
+    @media (max-width: 1200px) {
+      width: 50%;
+      & > svg:first-of-type {
+        display: none;
+      }
+      & > svg:last-of-type {
+        display: flex;
+        margin: 25px auto auto;
+      }
+    }
+  }
+
+  @media (max-width: 1024px) {
+    flex-wrap: wrap;
+    margin-top: 15px;
+
+    & > div:last-of-type {
+      width: 100%;
+      max-width: 480px;
+    }
+  }
+
+  @media (max-width: 470px) {
+    & > div {
+      padding-left: 23px;
+      padding-right: 23px;
+    }
+
+    & > div:first-of-type {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: -10px;
+    }
+    margin-left: -23px;
+    margin-right: -23px;
+  }
+}
+
+$pieSizes: 18, 2, 6, 10, 15, 5, 20, 4, 18, 2;
+
+$sumOffset: 0;
+@for $i from 1 through length($pieSizes) {
+  $size: nth($pieSizes, $i);
+  @keyframes pie#{$i} {
+    100% {
+      stroke-dasharray: $size 1000%;
+      stroke-dashoffset: -$sumOffset;
+    }
+  }
+  $sumOffset: $sumOffset + $size;
+}
+
+@keyframes showPieName {
+  100% {
+    opacity: 1;
+  }
+}
+
+.pieAnimation {
+  & > div:first-of-type {
+    & > div > svg {
+      @for $i from 1 through length($pieSizes) {
+        & > circle:nth-of-type(#{$i}) {
+          animation: pie#{$i} 3s forwards ease;
+        }
+        & > path:nth-last-of-type(#{$i}) {
+          animation: showPieName 1s forwards ease;
+          animation-delay: #{(length($pieSizes)-$i)*0.2 + 1}s;
+        }
+      }
+    }
+  }
+}
+
+.teamTitle {
+  @extend .landingTitle;
+
+  margin-top: 120px;
+
+  @media (max-width: 768px) {
+    margin-top: 100px;
+  }
+}
+
+.landingFooter {
+  position: relative;
+  background: #F5FAFF;
+  width: 100vw;
+
+  & > :global(#newsletter) {
+    margin-top: 0;
+
+    & > div > :global(.newsletter-container) {
+      border-top: none;
+    }
+  }
+}
