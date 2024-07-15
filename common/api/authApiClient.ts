@@ -6,10 +6,13 @@ import type {
   ILoginParams,
   IRegisterParams,
   IResetPasswordParams,
+  ILoginWeb3Params,
 } from './apiTypes';
 import { APP_ROUTE } from './routes';
 import type { IResetPasswordOtpParams } from './apiTypes';
 import { syncStorage } from '../helpers/syncStorage';
+import { clearDatabases } from './logoutWeb3';
+import { deleteDatabase } from './logoutWeb3';
 
 export const authApiClient = createApi({
   reducerPath: 'authApi' as const,
@@ -23,6 +26,20 @@ export const authApiClient = createApi({
         url: `/api/login`,
         method: 'POST',
         body: { ...body, otp: true },
+      }),
+    }),
+    loginNFID: builder.mutation<IAuthResult | { otp: true }, ILoginWeb3Params>({
+      query: (body) => ({
+        url: `/auth/nfid_token`,
+        method: 'POST',
+        body: { ...body, otp: false },
+      }),
+    }),
+    loginICP: builder.mutation<IAuthResult | { otp: true }, ILoginWeb3Params>({
+      query: (body) => ({
+        url: `/auth/iid_token `,
+        method: 'POST',
+        body: { ...body, otp: false },
       }),
     }),
     loginSocial: builder.query<
@@ -54,6 +71,7 @@ export const authApiClient = createApi({
     }),
     logout: builder.mutation<null, void>({
       queryFn: () => {
+        clearDatabases();
         const token = syncStorage.token;
         if (token) {
           fetch(`${APP_ROUTE}/api/logout`, {
