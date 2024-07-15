@@ -1,0 +1,11 @@
+@include on-lg-down {
+  .app-container.commentary {
+    grid-template-columns: 0.25fr 0.75fr;
+  }
+}
+
+@include on-sm-down {
+  .app-container.commentary {
+    grid-template-columns: 1fr;
+  }
+}

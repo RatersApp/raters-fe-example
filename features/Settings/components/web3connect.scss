@@ -1,0 +1,48 @@
+.settingsWeb3-list {
+  margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.settingsWeb3-empty-title {
+  font-size: 12px;
+  color: #677897;
+  line-height: 16.34px;
+}
+
+.settingsWeb3-list_item {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  &_header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  &_address {
+    font-size: 10px !important;
+    line-height: 13.62px !important;
+    color: #677897 !important;
+    margin-top: 8px !important;
+    font-weight: 500 !important;
+  }
+
+  &_button_disconnect {
+    background: #d2e4ff;
+    padding: 3px 8px;
+    border-radius: 16px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    &:hover {
+      cursor: pointer;
+      background: darken($color: #d2e4ff, $amount: 10);
+    }
+  }
+  img {
+    max-height: 11px;
+    width: auto;
+  }
+}

@@ -1,0 +1,16 @@
+@include on-lg-down {
+  .app-container.settings {
+    grid-template-columns: 0.25fr 0.75fr;
+  }
+}
+
+@include on-sm-down {
+  .app-container.settings {
+    grid-template-columns: none;
+    grid-template-rows: 1fr;
+
+    .userCardContainer, .recommendedUsersCard {
+      max-width: 100%;
+    }
+  }
+}

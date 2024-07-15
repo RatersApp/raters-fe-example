@@ -1,0 +1,144 @@
+@import 'media';
+
+.commentaryFieldWrapper {
+  display: flex;
+  margin-top: 20px;
+  position: relative;
+  .usersForTagContainer {
+    bottom: 50px;
+    left: 50px;
+  }
+}
+
+.canisterPrincipalContainer {
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  align-items: center;
+  border-radius: 5px;
+  padding: 3px;
+  div {
+  }
+}
+
+.canisterPrincipalContainer:active {
+  background: #edf2ff;
+}
+
+.canisterModalTitle {
+  font-size: 14px;
+  line-height: 17px;
+  font-weight: 600;
+  color: #47536a;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+.canisterModalList {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  li {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+
+    a {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    h6 {
+      font-size: 12px;
+      line-height: 14px;
+      font-weight: 600;
+      color: #47536a;
+    }
+    p {
+      text-align: right;
+      font-size: 12px;
+      line-height: 16px;
+      font-weight: 400;
+      color: #47536a;
+    }
+    width: 100%;
+  }
+}
+
+.userReviewContentWrapper {
+  width: 100%;
+}
+
+.removeReviewText {
+  color: #c73232;
+  font-size: $font-size-medium;
+  font-weight: $font-weight-medium;
+}
+
+.editReviewText {
+  color: $heading-primary;
+  font-size: $font-size-medium;
+  font-weight: $font-weight-medium;
+}
+
+.commentaryWeb3 {
+  margin-left: 6px;
+  margin-top: -7px;
+}
+
+.commentaryProgressContainer {
+  display: flex;
+  justify-content: center;
+  padding: 16px;
+
+  & > .MuiCircularProgress-root {
+    width: 25px !important;
+    height: 25px !important;
+  }
+}
+
+.commentaryInput {
+  width: 100%;
+  margin-left: 12px;
+
+  & > .Mui-focused {
+    background-color: $background-gray;
+  }
+
+  & > div {
+    padding-left: 12px;
+    width: 100%;
+    height: 40px;
+    border-radius: 12px;
+    background-color: $background-gray;
+
+    & > .emojiPickerButton {
+      align-self: unset;
+    }
+
+    &:hover {
+      background-color: $background-gray;
+    }
+
+    & > input {
+      color: $heading-primary;
+      font-size: $font-size-default;
+      opacity: 1;
+      height: 40px;
+
+      &::placeholder {
+        padding-left: inherit;
+        opacity: 1;
+      }
+    }
+  }
+}
