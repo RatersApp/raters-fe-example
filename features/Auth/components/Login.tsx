@@ -17,13 +17,18 @@ import { AuthData } from '../common/useAuthChange';
 import { usePushSignup } from '../common/hooks';
 import { useEffect, useState, useCallback } from 'react';
 import RatersLogo from '../../../features/Landing/static/assets/img/navbar/logo.svg';
-import { Web3Button } from './Web3ButtonModal.tsx';
+import { Web3Button } from './Web3Button';
 import { Web3Modal } from './Web3Modal';
 import { NFID } from '@nfid/embed';
 import type { IdleOptions, AuthClientStorage } from '@dfinity/auth-client';
 import type { SignIdentity } from '@dfinity/agent';
 import { useInternetIdentity } from 'ic-use-internet-identity';
 import { authApiClient } from '../../../common/api/authApiClient';
+import getProviderAndPublicKey from './Phantom/getProviderAndPublicKey';
+import createSignInMessage from './Phantom/createSignInMessage';
+import type { SolanaSignInInput } from './Phantom/types';
+import { useDispatch } from 'react-redux';
+import { toast } from 'react-toastify';
 import { AccountIdentifier } from '@dfinity/ledger-icp';
 
 const algorithm = {
@@ -191,6 +196,84 @@ export const Login = () => {
     initializeNFID();
   }, []);
 
+  const [loginPhantom] = authApiClient.useLoginPhantomMutation();
+
+  const dispatch = useDispatch();
+
+  const handlePhantomWallet = useCallback(async () => {
+    setDisable(true);
+    try {
+      const [phantomPublicKey, phantomProvider] = await getProviderAndPublicKey(
+        false,
+      );
+      const res = await dispatch(
+        // @ts-ignore
+        authApiClient.endpoints.singInPhantomMassage.initiate(
+          {},
+          { subscribe: true, forceRefetch: true },
+        ),
+      );
+
+      if (!phantomProvider || !phantomPublicKey || !res.isSuccess) return;
+
+      const signInData: SolanaSignInInput = res.data;
+
+      const domain = signInData.domain || window.location.host;
+      const address = signInData.address || phantomPublicKey.toBase58();
+
+      let signature, message;
+
+      if (
+        phantomProvider &&
+        'signIn' in phantomProvider &&
+        typeof phantomProvider.signIn == 'function'
+      ) {
+        signature = await phantomProvider.signIn({
+          ...signInData,
+          domain,
+          address,
+        });
+
+        message = String.fromCharCode(...signature.signedMessage);
+        signature = {
+          publicKey: phantomPublicKey.toBase58(),
+          signature: signature.signature,
+        };
+      } else {
+        const [msg, signedMessage] = createSignInMessage({
+          ...signInData,
+          domain,
+          address,
+        });
+
+        signature = await phantomProvider.signMessage(signedMessage);
+        signature.publicKey = phantomPublicKey.toBase58();
+
+        message = msg;
+      }
+
+      const responseloginPhantom = await loginPhantom({
+        ...signature,
+        message,
+      });
+      if (responseloginPhantom?.error?.data?.error) {
+        if (typeof responseloginPhantom?.error?.data?.message != 'string')
+          alert(
+            JSON.stringify({
+              responseloginPhantom,
+              ...signature,
+              message,
+            }),
+          );
+        if (typeof responseloginPhantom?.error?.data?.message == 'string')
+          toast(t(responseloginPhantom?.error?.data?.message));
+      }
+    } catch (error) {
+      console.error(error);
+    } finally {
+      setDisable(false);
+    }
+  }, [dispatch, loginPhantom, t]);
   return (
     <AuthWrapper Background={LoginBackground}>
       <Web3Modal
@@ -198,8 +281,10 @@ export const Login = () => {
         handleClose={handleClose}
         handleNFIDAuth={handleNFIDAuth}
         handleICPAuth={handleICPAuth}
+        handlePhantomWallet={handlePhantomWallet}
         isNFIDConnected={disable}
         isIIDConnected={disable}
+        isPhantomConnected={disable}
       />
       <Typography variant={'h6'} className="authWelcomeMessage">
         {t('NewLogin.Title')}
