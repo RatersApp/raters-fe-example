@@ -1,29 +1,7 @@
 # Project Description: Web3 Authorization Integration in RatersApp
 **Raters Frontend Example** integrates Web3 authorization using Next.js and TypeScript.
 
-For the RatersApp project, Web3 authorization was integrated using various libraries and tools. The primary framework for the application is Next.js, and the project is written in TypeScript. Below are the details of the libraries and their purposes in this integration:
-
-
-## NFID Integration
-- **Library:** `@nfid/embed`
-- **Purpose:** This library connects NFID, facilitating authorization and obtaining the principal, public/private keys, and wallet address.
-
-## Internet Identity Integration
-- **Authorization Library:** `@dfinity/identity`
-- **Community Hook Library:** `@ic-use-internet-identity`
-- **Purpose:** This custom community library integrates a hook for handling authorization within React applications.
-
-## Wallet Address Retrieval
-- **Library:** `@dfinity/ledger`
-- **Method Used:** `fromPrincipal`
-- **Purpose:** This method retrieves the wallet address for both NFID and ICP methods.
-
-## Detailed Description
-To integrate Web3 authorization into RatersApp, the `@nfid/embed` library was used for connecting NFID, setting up the authorization, and extracting necessary cryptographic keys (principal, public/private keys) and the wallet address.
-
-For integrating Internet Computer Protocol (ICP) authorization, `@dfinity/identity` was employed for basic authorization functionalities. Additionally, a custom community library `@ic-use-internet-identity` was utilized to provide a convenient hook for incorporating ICP authorization seamlessly into the React component structure of the application.
-
-To ensure compatibility and retrieve the wallet addresses required for transactions and further operations, the `@dfinity/ledger` library was used. Specifically, the `fromPrincipal` method was crucial for obtaining the wallet address corresponding to the principal obtained from both NFID and ICP integrations.
+For the RatersApp project, Web3 authorization was integrated using various libraries and tools. The primary framework for the application is Next.js, and the project is written in TypeScript. Below are the details of the libraries and their purposes in this integration
 
 ## Repository Information
 This repository is a trimmed example implementation of the frontend part of the RatersApp service, demonstrating the milestone implementations within the ICP developer grant framework.
@@ -77,9 +55,5 @@ This project is licensed under the [Creative Commons Attribution-NonCommercial-N
 - **Next.js** - [MIT License](https://github.com/vercel/next.js/blob/canary/license.md)
 - **React.js** - [MIT License](https://github.com/facebook/react/blob/main/LICENSE)
 - **TypeScript** - [Apache License 2.0](https://github.com/microsoft/TypeScript/blob/main/LICENSE.txt)
-- **@dfinity/agent** - [Apache License 2.0](https://github.com/dfinity/agent-js/blob/main/LICENSE)
-- **@dfinity/identity** - [Apache License 2.0](https://github.com/dfinity/agent-js/blob/main/LICENSE)
-- **@dfinity/candid** - [Apache License 2.0](https://github.com/dfinity/agent-js/blob/main/LICENSE)
-- **@dfinity/ledger** - [Apache License 2.0](https://github.com/dfinity/agent-js/blob/main/LICENSE)
 
 See the [LICENSE](https://github.com/RatersApp/raters-fe-example/blob/main/LICENSE.md) file for more details.
